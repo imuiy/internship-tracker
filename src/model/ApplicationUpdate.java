@@ -18,12 +18,19 @@ public class ApplicationUpdate {
     }
 
     // Getters and setters
-    public void setType(String type) { this.type = type; }
-    public void setSummary(String summary) { this.summary = summary; }
-    public void setAction(String action) { this.action = action; }
-    public void setConfidence(double confidence) { this.confidence = confidence; }
+    public LocalDate getDate() { return date; }
+    public String getEmailSubject() { return emailSubject; }
+    public String getEmailSender() { return emailSender; }
 
+    public void setType(String type) { this.type = type; }
     public String getType() { return type; }
+
+    public void setSummary(String summary) { this.summary = summary; }
     public String getSummary() { return summary; }
+
+    public void setAction(String action) { this.action = action; }
     public String getAction() { return action; }
+
+    public void setConfidence(double confidence) { this.confidence = confidence; }
+    public double getConfidence() { return confidence; }
 }
