@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.cici'
+version '1.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // HTTP client for OpenAI API
+    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
+
+    // JSON parsing
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    // Optional: JavaMail API for email integration
+    implementation 'com.sun.mail:javax.mail:1.6.2'
+}
+
+application {
+    mainClass.set('main.InternshipApp')
+}
+
+tasks.withType(JavaExec) {
+    standardInput = System.in
+}
