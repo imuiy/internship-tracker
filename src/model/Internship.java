@@ -21,15 +21,15 @@ public class Internship {
 
     public void addUpdate(ApplicationUpdate update) {
         updates.add(update);
-        // Auto-update status based on AI type
-        switch(update.getType()) {
-            case "Offer": status = "Offer"; break;
-            case "Interview": status = "Interview Scheduled"; break;
-            case "Rejection": status = "Rejected"; break;
+        if(update.getType() != null){
+            switch(update.getType()){
+                case "Offer": status = "Offer"; break;
+                case "Interview": status = "Interview Scheduled"; break;
+                case "Rejection": status = "Rejected"; break;
+            }
         }
     }
 
-    // Getters and setters
     public String getCompany() { return company; }
     public String getRole() { return role; }
     public LocalDate getDeadline() { return deadline; }
